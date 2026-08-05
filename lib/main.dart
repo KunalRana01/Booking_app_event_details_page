@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'event_details_page';
+import '/src/pages/event_details_page.dart';
 
-void main(
+void main(){
 
-  runApp(EventDetailsPage());
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: EventDetailsPage(),
+    )
 
-);
+
+  );
+
+
+}
