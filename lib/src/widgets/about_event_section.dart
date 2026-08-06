@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../models/event.dart';
+import '../../models/event.dart';
 
 class AboutEventSection extends StatefulWidget{
 
+  final Event event;
+
   const AboutEventSection({
-    super.key
+    super.key,
+    required this.event
   });
 
   @override
@@ -12,8 +17,6 @@ class AboutEventSection extends StatefulWidget{
 }
 
 class AboutEventSectionState extends State<AboutEventSection>{
-
-  final String description = "Get ready for an unforgettable evening with Armaan Malik Live in Chennai! Armaan Malik is known for his soulful voice and chart-topping hits, and he is set to captivate fans with a sensational performance. Whether you love romantic ballads or energetic pop tunes, this live concert promises a musical journey.The venue offers excellent seating arrangements, premium sound systems, food stalls, parking facilities, and security. Doors open one hour before the event begins. Please carry a valid ID proof along with your booking confirmation. Children above the age of 15 require a separate ticket.";
 
   bool isExpanded = false;
 
@@ -38,7 +41,7 @@ class AboutEventSectionState extends State<AboutEventSection>{
             ),
             SizedBox(height: 15),
             Text(
-              description,
+              "Npthing",
               maxLines: isExpanded ? null : 2,
               overflow: isExpanded?TextOverflow.visible:TextOverflow.ellipsis,
               style: TextStyle(

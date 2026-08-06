@@ -4,11 +4,16 @@ import '../widgets/event_stats_section.dart';
 import '../widgets/event_details_section.dart';
 import '../widgets/promotion_section.dart';
 import '../widgets/about_event_section.dart';
-import 'login.dart';
+import '../../models/event.dart';
 
 class EventDetailsPage extends StatelessWidget{
 
-  const EventDetailsPage({super.key});
+  final Event event;
+
+  const EventDetailsPage({
+    super.key,
+    required this.event
+  });
 
   @override
   Widget build(BuildContext context){
@@ -18,10 +23,8 @@ class EventDetailsPage extends StatelessWidget{
         appBar: AppBar(
           backgroundColor: Color(0XFFFF002A),
           leading: IconButton(
-            onPressed: (){Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context)=>Login()),
-            );}, 
+            onPressed: (){Navigator.pop(context);},
+          
             icon:Image.asset(
               "lib/src/images/backButton.png"
             )
@@ -46,14 +49,14 @@ class EventDetailsPage extends StatelessWidget{
             child: Column(
               children: [
                 EventImageSection(
-                  imgPath: "lib/src/images/eventImage.jpg",
+                  imgPath: event.posterUrl,
                 ),
                 EventStatsSection(),
                 EventDetailsSection(
-                  eventTitle: "Armaan Malik Live in Chennai - 2024",
-                  eventType: "Concert | Hindi | 2hr 30mins | 15 Years + | 500+ Views",
-                  eventDateTime: "06:00 PM Sunday, 22nd December 2024",
-                  eventLocation: "YMCA , Royapettah : Chennai 24 Westcott Road...",
+                  eventTitle: event.title,
+                  eventType: event.type,
+                  eventDateTime: event.dateTime,
+                  eventLocation: event.location,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -67,7 +70,7 @@ class EventDetailsPage extends StatelessWidget{
                   height: 10,
                   child: ColoredBox(color: const Color.fromARGB(255, 238, 228, 228)),
                 ),
-                AboutEventSection(),
+                AboutEventSection(event: event,),
                 SizedBox(
                 width: double.infinity,
                 height: 10,

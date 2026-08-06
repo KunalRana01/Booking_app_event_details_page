@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'event_stat_item.dart';
 
 class EventStatsSection extends StatelessWidget {
+  
   const EventStatsSection({super.key});
 
   @override

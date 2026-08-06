@@ -78,6 +78,9 @@ flutter:
       - lib/src/images/logo_1.png
       - lib/src/images/logo_2.png
       - lib/src/images/logo_fb.png
+      - lib/src/images/mainLogo.png
+      - lib/src/images/textLogo.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

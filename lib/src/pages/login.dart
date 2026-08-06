@@ -1,13 +1,17 @@
+
 import 'package:flutter/material.dart';
+import '../../models/event.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  final Event event;
+  const Login({
+    super.key,
+    required this.event
+    });
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
+    return Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -181,12 +185,22 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
+                  IconButton(
+                    onPressed: (){
+                      Navigator.pushNamed(
+                        context, 
+                        "/otp",
+                        arguments: event
+                      );
+                    },
+                    icon: Icon(Icons.skip_next),
+                  )
                 ],
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
